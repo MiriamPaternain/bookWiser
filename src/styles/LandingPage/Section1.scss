@@ -11,11 +11,15 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-
+  @media (min-width: 768px) {
+    padding-top: 4rem;
+    padding-bottom: 12rem;
+  }
   &_text {
     font-family: $font-family;
-    max-width: 700px;
+    max-width: 500px;
     color: $black-color;
+    letter-spacing: $letter-spacing;
   }
   &_list {
     display: flex;
@@ -24,7 +28,9 @@
     margin-left: 2rem;
     list-style-type: disc;
     margin-bottom: 6rem;
-    max-width: 700px;
+    max-width: 500px;
+    letter-spacing: $letter-spacing;
+
     &--text {
       font-family: $font-family;
       color: $black-color;

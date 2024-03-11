@@ -3,9 +3,24 @@
 .menuContainer {
   width: 100%;
   background-color: $primary-color;
+  display: flex;
+
+  justify-content: center;
+  padding-bottom: 1rem;
+
   &_list {
-    color: white;
-  }
-  &_subList {
+    color: $white-color;
+    font-family: $font-family;
+    font-size: 0.9rem;
+    letter-spacing: $letter-spacing;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    &_subList {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
   }
 }

@@ -19,6 +19,8 @@
     display: none;
     height: 2.5rem;
     width: 60%;
+    border: none;
+    border-radius: 5px;
     @media (min-width: 768px) {
       display: block;
     }
@@ -35,10 +37,11 @@
   }
 }
 .nav_search {
+  background-color: #e2e2df;
   display: flex;
   flex-direction: row;
   justify-content: center;
-  margin-top: 0.5rem;
+  padding-top: 0.5rem;
   @media (min-width: 768px) {
     display: none;
   }

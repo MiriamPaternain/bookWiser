@@ -19,7 +19,7 @@ function Nav() {
           <img src={logo} alt='' className='navContainer_logo' />
           <input
             type='text'
-            placeholder='Autor / Título '
+            placeholder='Buscar por Autor / Título '
             className='navContainer_input'
           />
           <button className='navContainer_btn' onClick={toggleMenu}>

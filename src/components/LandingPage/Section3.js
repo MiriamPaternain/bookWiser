@@ -47,6 +47,7 @@ function Section3() {
               <span className='section3Container_bookFile--rateStars'>
                 <FiStar /> <FiStar /> <FiStar /> <FiStar /> <FiStar />
               </span>
+              <p className='section3Container_bookFile--rateMean'>Media: --</p>
             </div>
             <p className='section3Container_bookFile--bookTitle'>
               - {books.Title} -

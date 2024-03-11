@@ -3,6 +3,7 @@ import { IoSearchSharp } from 'react-icons/io5';
 import logo from '../img/bookWiserLogoPurple.png';
 import { useState } from 'react';
 import Menu from './Menu';
+import { IoMdClose } from 'react-icons/io';
 
 function Nav() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -21,7 +22,7 @@ function Nav() {
           className='navContainer_input'
         />
         <button className='navContainer_btn' onClick={toggleMenu}>
-          <TfiAlignCenter />
+          {menuOpen ? <IoMdClose /> : <TfiAlignCenter />}
         </button>
       </div>
       {menuOpen && <Menu onClose={toggleMenu} />}

@@ -1,5 +1,7 @@
 @import './Variables.scss';
-
+.nav {
+  width: 100%;
+}
 .navContainer {
   background-color: $primary-color;
   width: 100%;
@@ -18,6 +20,7 @@
     height: 3rem;
     width: 12rem;
   }
+
   &_btn {
     background-color: transparent;
     border: none;
@@ -26,5 +29,25 @@
     margin-right: 0.7rem;
     color: $secondary-color;
     cursor: pointer;
+  }
+}
+.nav_search {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 0.5rem;
+
+  &--input {
+    border-radius: 10px;
+    border: 1px solid $primary-color;
+    height: 2rem;
+    width: 85%;
+  }
+  &--icon {
+    font-size: 1.5rem;
+    background-color: transparent;
+    border: none;
+    color: rgb(157, 157, 157);
+    transform: translateX(-130%);
   }
 }

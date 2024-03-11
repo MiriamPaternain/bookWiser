@@ -34,27 +34,27 @@ function Section3() {
             <img
               src={books.Img}
               alt=''
-              className='section3Container_bookfile--img'
+              className='section3Container_bookFile--img'
             />
-            <span className='section3Container_bookfile--heart'>
+            <span className='section3Container_bookFile--heart'>
               <FiHeart />
             </span>
-            <span className='section3Container_bookfile--check'>
+            <span className='section3Container_bookFile--check'>
               <FiCheckSquare />
             </span>
-            <div className='section3Container_bookfile--rate'>
-              <p className='section3Container_bookfile--rateText'>Valorar:</p>
-              <span className='section3Container_bookfile--rateStars'>
+            <div className='section3Container_bookFile--rate'>
+              <p className='section3Container_bookFile--rateText'>Valorar:</p>
+              <span className='section3Container_bookFile--rateStars'>
                 <FiStar /> <FiStar /> <FiStar /> <FiStar /> <FiStar />
               </span>
             </div>
-            <p className='section3Container_bookfile--bookTitle'>
-              {books.Title}
+            <p className='section3Container_bookFile--bookTitle'>
+              - {books.Title} -
             </p>
-            <p className='section3Container_bookfile--bookAuthor'>
+            <p className='section3Container_bookFile--bookAuthor'>
               {books.Author}
             </p>
-            <p className='section3Container_bookfile--bookGendre'>
+            <p className='section3Container_bookFile--bookGendre'>
               {books.Gendre}
             </p>
           </article>

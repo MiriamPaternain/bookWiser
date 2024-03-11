@@ -1,16 +1,12 @@
-//seccion import
-
-//.- de React, de archivos propios, Sass, Images
 import '../styles/App.scss';
+import LandingPage from './LandingPage/LandingPage';
 
-/*  COMPONENTE */
 function App() {
-  /*
-    Variables de estado, funciones manejadoras de eventos, variables, funcion handle 
-  */
-  /* RETURN --> HTML */
-  return <div>pagina principal</div>;
+  return (
+    <div>
+      <LandingPage />
+    </div>
+  );
 }
 
-/* export*/
 export default App;

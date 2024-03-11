@@ -4,13 +4,18 @@
   padding: 1rem 3rem 2rem 3rem;
   display: flex;
   flex-direction: column;
+
+  align-items: center;
   gap: 2rem;
   background-image: url(../../img/old-books-arrangement-with-copy-space.jpg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+
   &_text {
     font-family: $font-family;
+    max-width: 700px;
+    color: $black-color;
   }
   &_list {
     display: flex;
@@ -19,8 +24,11 @@
     margin-left: 2rem;
     list-style-type: disc;
     margin-bottom: 6rem;
+    max-width: 700px;
     &--text {
       font-family: $font-family;
+      color: $black-color;
+      max-width: 700px;
     }
     &--textLink {
       text-decoration: none;

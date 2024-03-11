@@ -7,11 +7,13 @@ import Footer from '../Footer';
 function LandingPage() {
   return (
     <>
-      <Nav />
-      <Section1 />
-      <Section2 />
-      <Section3 />
-      <Footer />
+      <div className='langingPageContainer'>
+        <Nav />
+        <Section1 />
+        <Section2 />
+        <Section3 />
+        <Footer />
+      </div>
     </>
   );
 }

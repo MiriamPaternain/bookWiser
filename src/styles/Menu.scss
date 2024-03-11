@@ -1,0 +1,11 @@
+@import './Variables.scss';
+
+.menuContainer {
+  width: 100%;
+  background-color: $primary-color;
+  &_list {
+    color: white;
+  }
+  &_subList {
+  }
+}

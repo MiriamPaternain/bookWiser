@@ -5,7 +5,7 @@ import { useState } from 'react';
 import Menu from './Menu';
 import { IoMdClose } from 'react-icons/io';
 
-function Nav() {
+function Nav({ showNavSearch, showSearchBar }) {
   const [menuOpen, setMenuOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -17,26 +17,30 @@ function Nav() {
       <div className='nav'>
         <div className='navContainer'>
           <img src={logo} alt='' className='navContainer_logo' />
-          <input
-            type='text'
-            placeholder='Buscar por Autor / Título '
-            className='navContainer_input'
-          />
+          {showNavSearch && (
+            <input
+              type='text'
+              placeholder='Buscar por Autor / Título '
+              className='navContainer_input'
+            />
+          )}
           <button className='navContainer_btn' onClick={toggleMenu}>
             {menuOpen ? <IoMdClose /> : <TfiAlignCenter />}
           </button>
         </div>
         {menuOpen && <Menu onClose={toggleMenu} />}
-        <div className='nav_search'>
-          <input
-            type='text'
-            placeholder='Autor / Título '
-            className='nav_search--input'
-          />
-          <button className='nav_search--icon'>
-            <IoSearchSharp />
-          </button>
-        </div>
+        {showNavSearch && (
+          <div className='nav_search'>
+            <input
+              type='text'
+              placeholder='Autor / Título '
+              className='nav_search--input'
+            />
+            <button className='nav_search--icon'>
+              <IoSearchSharp />
+            </button>
+          </div>
+        )}
       </div>
     </>
   );

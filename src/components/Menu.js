@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 function Menu() {
   return (
     <>
@@ -12,6 +14,9 @@ function Menu() {
             <li>...</li>
           </ul>
           <li>| Añade un libro</li>
+          <Link to='/about' className='menuContainer_list--link'>
+            | Sobre bookWiser
+          </Link>
         </ul>
       </div>
     </>

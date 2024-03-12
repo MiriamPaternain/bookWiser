@@ -5,6 +5,9 @@ function Menu() {
     <>
       <div className='menuContainer'>
         <ul className='menuContainer_list'>
+          <Link to='/' className='menuContainer_list--link'>
+            | Principal
+          </Link>
           <li>| Mi cuenta</li>
           <li>| Géneros: {/* -conectar a la API cuando esté lista */}</li>
           <ul className='menuContainer_list--genders'>

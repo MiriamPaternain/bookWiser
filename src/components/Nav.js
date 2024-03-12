@@ -5,7 +5,7 @@ import { useState } from 'react';
 import Menu from './Menu';
 import { IoMdClose } from 'react-icons/io';
 
-function Nav({ showNavSearch, showSearchBar }) {
+function Nav({ showNavSearch = true }) {
   const [menuOpen, setMenuOpen] = useState(false);
 
   const toggleMenu = () => {

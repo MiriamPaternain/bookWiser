@@ -18,7 +18,10 @@ function Menu() {
             <li>Romántica</li>
             <li>...</li>
           </ul>
-          <li>| Añade un libro</li>
+          <Link to='/add-book' className='menuContainer_list--link'>
+            | Añade un libro
+          </Link>
+
           <Link to='/about' className='menuContainer_list--link'>
             | Sobre bookWiser
           </Link>

@@ -2,11 +2,14 @@ const express = require('express');
 const mongoose = require('mongoose');
 
 const app = express();
-const port = process.env.PORT || 3000;
+const cors = require('cors');
+app.use(cors());
 
+const port = process.env.PORT || 3000;
+const mongoConnection = process.env.MONGO_CONNECTION;
 // Conexión a la base de datos MongoDB
 mongoose
-  .connect('mongodb://localhost:27017/tu_base_de_datos', {
+  .connect(mongoConnection, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
@@ -27,17 +30,16 @@ app.use(express.json());
 // Ruta para agregar un libro
 app.post('/api/books', async (req, res) => {
   try {
-    const { title, author, genre, imageUrl } = req.body;
-    const newBook = new Book({ title, author, genre, imageUrl });
-    await newBook.save();
-    res.status(201).json(newBook);
+    const newBook = req.body;
+    await Book.create(newBook);
+    res.status(201).send('Libro añadido correctamente');
   } catch (error) {
-    console.error('Error al agregar el libro:', error);
-    res.status(500).json({ message: 'Error interno del servidor' });
+    console.error('Error al añadir el libro:', error);
+    res.status(500).send('Error interno del servidor');
   }
 });
 
-// Ruta para el formulario de registro de usuarios
+/* // Ruta para el formulario de registro de usuarios
 app.post('/api/register', (req, res) => {
   // falta logica para registro de usuarios
 });
@@ -56,7 +58,7 @@ app.get('/api/books', async (req, res) => {
     console.error('Error al obtener los libros:', error);
     res.status(500).json({ message: 'Error interno del servidor' });
   }
-});
+}); */
 
 // rutas no encontradas
 app.use((req, res) => {

@@ -27,6 +27,7 @@ function AddBook() {
         genre: '',
         imageUrl: '',
       });
+
       alert('Libro añadido correctamente');
     } catch (error) {
       console.error('Error al añadir el libro:', error);
@@ -49,7 +50,10 @@ function AddBook() {
             ¡Muchas gracias por contribuir en este proyecto!
           </p>
         </div>
-        <form action='' className='addBookContainer_form'>
+        <form
+          onSubmit={handleSubmit}
+          className='addBookContainer_form'
+          action='/api/books'>
           <input
             type='text'
             className='addBookContainer_form--input'
@@ -93,7 +97,7 @@ function AddBook() {
           <input
             type='submit'
             className='addBookContainer_form--submit'
-            placeholder='Añadir libro'
+            value='Añadir libro'
           />
         </form>
       </div>

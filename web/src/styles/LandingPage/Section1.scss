@@ -1,0 +1,50 @@
+@import '../Variables.scss';
+
+.Section1Container {
+  padding: 1rem 3rem 2rem 3rem;
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  gap: 2rem;
+  background-image: url(../../img/old-books-arrangement-with-copy-space.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  @media (min-width: 768px) {
+    padding-top: 4rem;
+    padding-bottom: 12rem;
+  }
+  &_text {
+    font-family: $font-family;
+    max-width: 500px;
+    color: $black-color;
+    letter-spacing: $letter-spacing;
+  }
+  &_list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-left: 2rem;
+    list-style-type: disc;
+    margin-bottom: 6rem;
+    max-width: 500px;
+    letter-spacing: $letter-spacing;
+    padding-bottom: 2rem;
+
+    &--text {
+      font-family: $font-family;
+      color: $black-color;
+      max-width: 700px;
+    }
+    &--textLink {
+      text-decoration: none;
+      color: $secondary-color;
+      cursor: pointer;
+    }
+  }
+}
+.Section1Container_text::first-letter {
+  font-size: 2.5rem;
+  font-family: $font-family;
+}

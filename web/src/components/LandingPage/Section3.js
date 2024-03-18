@@ -1,9 +1,24 @@
+import { useEffect, useState } from 'react';
 import { FiHeart } from 'react-icons/fi';
 import { FiCheckSquare } from 'react-icons/fi';
 import { FiStar } from 'react-icons/fi';
+import axios from 'axios';
 
 function Section3() {
-  const books = [
+  const [books, setBooks] = useState([]);
+
+  useEffect(() => {
+    async function fetchBooks() {
+      try {
+        const response = await axios.get('http://localhost:4000/api/books');
+        setBooks(response.data.books);
+      } catch (error) {
+        console.error('Error al obtener los libros', error);
+      }
+    }
+    fetchBooks();
+  }, []);
+  /* const books = [
     {
       index: 1,
       Title: 'Diferente',
@@ -25,7 +40,7 @@ function Section3() {
       Gendre: 'Romántica',
       Img: 'https://www.planetadelibros.com/usuaris/libros/thumbs/729d7a30-ffda-4234-b058-1ac781108b7a/d_295_510/portada_donde-todo-brilla_alice-kellen_202310231102.webp',
     },
-  ];
+  ]; */
   return (
     <>
       <div className='section3Container'>

@@ -33,6 +33,17 @@ server.post('/api/books', async (req, res) => {
     res.status(500).json({ error: 'Ocurrió un error al añadir el libro' });
   }
 });
+
+server.get('/api/books', async (req, res) => {
+  try {
+    const books = await Book.find();
+    res.status(200).json({ books });
+  } catch (error) {
+    console.error('Error al obtener los libros:', error);
+    res.status(500).json({ error: 'Ocurrió un error al obtener los libros' });
+  }
+});
+
 //habilitar puerto para escuchar servidor
 const PORT = 4000;
 

@@ -8,7 +8,7 @@ function AddBook() {
     title: '',
     author: '',
     genre: '',
-    imageUrl: '',
+    imgUrl: '',
   });
 
   const handleChange = (e) => {
@@ -19,13 +19,13 @@ function AddBook() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('/api/books', bookData);
+      await axios.post('http://localhost:4000/api/books', bookData);
 
       setBookData({
         title: '',
         author: '',
         genre: '',
-        imageUrl: '',
+        imgUrl: '',
       });
 
       alert('Libro añadido correctamente');
@@ -85,8 +85,8 @@ function AddBook() {
             type='text'
             className='addBookContainer_form--input'
             placeholder='* Enlace de la imagen'
-            name='imageUrl'
-            value={bookData.imageUrl}
+            name='imgUrl'
+            value={bookData.imgUrl}
             onChange={handleChange}
             required
           />

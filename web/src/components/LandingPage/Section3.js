@@ -4,7 +4,7 @@ import { FiCheckSquare } from 'react-icons/fi';
 import { FiStar } from 'react-icons/fi';
 import axios from 'axios';
 
-function Section3() {
+function Section3({ searchItem }) {
   const [books, setBooks] = useState([]);
 
   useEffect(() => {
@@ -19,10 +19,16 @@ function Section3() {
     fetchBooks();
   }, []);
 
+  const filterBooks = (book) => {
+    return (
+      book.title.tolowerCase().incluedes(searchItem.toLowerCase()) ||
+      book.author.toLowerCase().incluedes(searchItem.toLowerCase())
+    );
+  };
   return (
     <>
       <div className='section3Container'>
-        {books.map((book, index) => (
+        {books.filter(filterBooks).map((book, index) => (
           <article key={index} className='section3Container_bookFile'>
             <img
               src={book.imgUrl}

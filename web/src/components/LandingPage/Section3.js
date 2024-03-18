@@ -44,10 +44,10 @@ function Section3() {
   return (
     <>
       <div className='section3Container'>
-        {books.map((books, index) => (
+        {books.map((book, index) => (
           <article key={index} className='section3Container_bookFile'>
             <img
-              src={books.Img}
+              src={book.imgUrl}
               alt=''
               className='section3Container_bookFile--img'
             />
@@ -65,13 +65,13 @@ function Section3() {
               <p className='section3Container_bookFile--rateMean'>Media: --</p>
             </div>
             <p className='section3Container_bookFile--bookTitle'>
-              - {books.Title} -
+              - {book.title} -
             </p>
             <p className='section3Container_bookFile--bookAuthor'>
-              {books.Author}
+              {book.author}
             </p>
             <p className='section3Container_bookFile--bookGendre'>
-              {books.Gendre}
+              {book.gendre}
             </p>
           </article>
         ))}

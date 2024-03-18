@@ -4,6 +4,7 @@ import logo from '../img/bookWiserLogoPurple.png';
 import { useState } from 'react';
 import Menu from './Menu';
 import { IoMdClose } from 'react-icons/io';
+import { Link } from 'react-router-dom';
 
 function Nav({ showNavSearch = true }) {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -16,7 +17,9 @@ function Nav({ showNavSearch = true }) {
     <>
       <div className='nav'>
         <div className='navContainer'>
-          <img src={logo} alt='' className='navContainer_logo' />
+          <Link to='/'>
+            <img src={logo} alt='' className='navContainer_logo' />
+          </Link>
           {showNavSearch && (
             <input
               type='text'

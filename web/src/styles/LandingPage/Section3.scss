@@ -10,27 +10,31 @@
   padding-top: 2rem;
   padding-bottom: 2rem;
   &_bookFile {
+    padding: 1rem;
     display: grid;
-    grid-template-rows: 3fr 3fr 3fr 1.3fr 1.3fr 1.3fr;
-    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(5, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     border: 1px solid $primary-color;
     border-radius: 10px;
     background-color: white;
+    width: 25rem;
     &--img {
       height: 12rem;
       margin: 1rem;
       grid-row-start: 1;
       grid-row-end: 4;
       grid-column-start: 1;
-      grid-column-end: 2;
+      grid-column-end: 3;
       border-radius: 10px;
+      justify-self: center;
     }
     &--heart {
-      grid-row-start: 1;
-      grid-row-end: 2;
-      grid-column-start: 2;
-      grid-column-end: 3;
+      grid-row-start: 5;
+      grid-row-end: 6;
+      grid-column-start: 1;
+      grid-column-end: 2;
       align-self: center;
+      justify-self: center;
       font-size: 1.5rem;
       cursor: pointer;
       :hover {
@@ -38,23 +42,27 @@
       }
     }
     &--check {
-      grid-row-start: 2;
-      grid-row-end: 3;
+      grid-row-start: 5;
+      grid-row-end: 6;
       grid-column-start: 2;
       grid-column-end: 3;
-      margin-top: 0.5rem;
+
       font-size: 1.5rem;
+      justify-self: center;
+      align-self: center;
       cursor: pointer;
       :hover {
         color: rgb(3, 198, 3);
       }
     }
     &--rate {
-      grid-row-start: 3;
-      grid-row-end: 4;
-      grid-column-start: 2;
+      grid-row-start: 4;
+      grid-row-end: 5;
+      grid-column-start: 1;
       grid-column-end: 3;
       font-size: 1rem;
+      justify-self: center;
+      align-self: center;
     }
     &--rateText {
       font-family: $font-family;
@@ -72,23 +80,32 @@
       font-size: 0.7rem;
     }
     &--bookTitle {
-      grid-row-start: 4;
-      grid-row-end: 5;
-      grid-column-start: 1;
-      grid-column-end: 3;
-      font-size: 1.3rem;
+      display: flex;
+      grid-row-start: 1;
+      grid-row-end: 3;
+      grid-column-start: 3;
+      grid-column-end: 5;
+      font-size: 1.5rem;
       font-family: $font-family;
       letter-spacing: $letter-spacing;
-      justify-self: center;
+      justify-content: center;
+      align-self: center;
+      text-align: center;
+      width: 100%;
       color: $black-color;
+      margin-right: 1rem;
     }
     &--bookAuthor {
-      grid-row-start: 5;
-      grid-row-end: 6;
-      grid-column-start: 1;
-      grid-column-end: 3;
+      display: flex;
+      grid-row-start: 3;
+      grid-row-end: 4;
+      grid-column-start: 3;
+      grid-column-end: 5;
       font-size: 1rem;
-      justify-self: center;
+      width: 100%;
+      justify-content: center;
+      margin-right: 1.2rem;
+      width: 100%;
       color: $primary-color;
       font-family: $font-family;
       letter-spacing: $letter-spacing;

@@ -18,29 +18,7 @@ function Section3() {
     }
     fetchBooks();
   }, []);
-  /* const books = [
-    {
-      index: 1,
-      Title: 'Diferente',
-      Author: 'Eloy Moreno',
-      Gendre: 'Narrativa',
-      Img: 'https://imagessl6.casadellibro.com/a/l/s5/56/9788466670456.webp',
-    },
-    {
-      index: 2,
-      Title: 'El circo de la noche',
-      Author: 'Erin Morgenstern',
-      Gendre: 'Fantasía',
-      Img: 'https://imagessl6.casadellibro.com/a/l/s5/96/9788408111696.webp',
-    },
-    {
-      index: 3,
-      Title: 'Donde todo brilla',
-      Author: 'Alice Kellen',
-      Gendre: 'Romántica',
-      Img: 'https://www.planetadelibros.com/usuaris/libros/thumbs/729d7a30-ffda-4234-b058-1ac781108b7a/d_295_510/portada_donde-todo-brilla_alice-kellen_202310231102.webp',
-    },
-  ]; */
+
   return (
     <>
       <div className='section3Container'>
@@ -65,7 +43,7 @@ function Section3() {
               <p className='section3Container_bookFile--rateMean'>Media: --</p>
             </div>
             <p className='section3Container_bookFile--bookTitle'>
-              - {book.title} -
+              {book.title}
             </p>
             <p className='section3Container_bookFile--bookAuthor'>
               {book.author}

@@ -13,8 +13,7 @@ function Nav({ showNavSearch = true, onSearch }) {
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
   };
-
-  const handleSearch = (e) => {
+  const handleInputChange = (e) => {
     setSearchItem(e.target.value);
     onSearch(e.target.value);
   };
@@ -32,7 +31,7 @@ function Nav({ showNavSearch = true, onSearch }) {
               placeholder='Buscar por Autor / Título '
               className='navContainer_input'
               value={searchItem}
-              onChange={handleSearch}
+              onChange={handleInputChange}
             />
           )}
           <button className='navContainer_btn' onClick={toggleMenu}>
@@ -46,6 +45,8 @@ function Nav({ showNavSearch = true, onSearch }) {
               type='text'
               placeholder='Autor / Título '
               className='nav_search--input'
+              value={searchItem}
+              onChange={handleInputChange}
             />
             <button className='nav_search--icon'>
               <IoSearchSharp />

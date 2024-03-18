@@ -8,7 +8,6 @@ function LandingPage() {
   return (
     <>
       <div className='langingPageContainer'>
-        <Nav />
         <Section1 />
         <Section2 />
         <Section3 />

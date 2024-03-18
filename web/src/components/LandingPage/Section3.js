@@ -20,10 +20,14 @@ function Section3({ searchItem }) {
   }, []);
 
   const filterBooks = (book) => {
-    return (
-      book.title.tolowerCase().incluedes(searchItem.toLowerCase()) ||
-      book.author.toLowerCase().incluedes(searchItem.toLowerCase())
-    );
+    if (!book || !book.title || !book.author) {
+      return false; // Retorna falso si book es undefined
+    }
+
+    const title = book.title ? book.title.toLowerCase() : '';
+    const author = book.author ? book.author.toLowerCase() : '';
+
+    return title.includes(searchItem) || author.includes(searchItem);
   };
   return (
     <>

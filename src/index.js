@@ -22,9 +22,12 @@ server.use(express.json({ limit: '100mb' }));
 //rutas solicitudes
 server.post('/api/books', async (req, res) => {
   try {
+    console.log('Datos recibidos del frontend:', req.body);
     const newBook = new Book(req.body);
     await newBook.save();
-    res.status(201).json({ message: 'Libro añadido correctamente' });
+    res
+      .status(201)
+      .json({ message: 'Libro añadido correctamente', book: newBook });
   } catch (error) {
     console.error('Error al añadir el libro:', error);
     res.status(500).json({ error: 'Ocurrió un error al añadir el libro' });

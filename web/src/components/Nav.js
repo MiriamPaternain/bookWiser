@@ -6,11 +6,17 @@ import Menu from './Menu';
 import { IoMdClose } from 'react-icons/io';
 import { Link } from 'react-router-dom';
 
-function Nav({ showNavSearch = true }) {
+function Nav({ showNavSearch = true, onSearch }) {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [searchItem, setSearchItem] = useState('');
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
+  };
+
+  const handleSearch = (e) => {
+    setSearchItem(e.target.value);
+    onSearch(e.target.value);
   };
 
   return (
@@ -25,6 +31,8 @@ function Nav({ showNavSearch = true }) {
               type='text'
               placeholder='Buscar por Autor / Título '
               className='navContainer_input'
+              value={searchItem}
+              onChange={handleSearch}
             />
           )}
           <button className='navContainer_btn' onClick={toggleMenu}>

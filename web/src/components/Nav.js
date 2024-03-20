@@ -2,6 +2,8 @@ import { TfiAlignCenter } from 'react-icons/tfi';
 import { IoSearchSharp } from 'react-icons/io5';
 import logo from '../img/bookWiserLogoPurple.png';
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+
 import Menu from './Menu';
 import { IoMdClose } from 'react-icons/io';
 import { Link } from 'react-router-dom';
@@ -9,13 +11,18 @@ import { Link } from 'react-router-dom';
 function Nav({ showNavSearch = true, onSearch }) {
   const [menuOpen, setMenuOpen] = useState(false);
   const [searchItem, setSearchItem] = useState('');
+  const navigate = useNavigate();
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
   };
   const handleInputChange = (e) => {
     setSearchItem(e.target.value);
-    onSearch(e.target.value);
+  };
+  const handleKeyPress = (e) => {
+    if (e.key === 'Enter') {
+      navigate(`/search/${searchItem}`);
+    }
   };
 
   return (
@@ -32,6 +39,7 @@ function Nav({ showNavSearch = true, onSearch }) {
               className='navContainer_input'
               value={searchItem}
               onChange={handleInputChange}
+              onKeyPress={handleKeyPress}
             />
           )}
           <button className='navContainer_btn' onClick={toggleMenu}>
@@ -47,6 +55,7 @@ function Nav({ showNavSearch = true, onSearch }) {
               className='nav_search--input'
               value={searchItem}
               onChange={handleInputChange}
+              onKeyPress={handleKeyPress}
             />
             <button className='nav_search--icon'>
               <IoSearchSharp />

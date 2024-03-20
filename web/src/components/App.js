@@ -4,8 +4,7 @@ import LandingPage from './LandingPage/LandingPage';
 import About from './About';
 import Account from './Account';
 import AddBook from './AddBook';
-import { useState } from 'react';
-import Nav from './Nav';
+import SearchResult from './SearchResult';
 
 function App() {
   return (
@@ -15,6 +14,7 @@ function App() {
         <Route path='/about' element={<About />} />
         <Route path='/account' element={<Account />} />
         <Route path='/add-book' element={<AddBook />} />
+        <Route path='/search/:query' element={<SearchResult />} />
       </Routes>
     </>
   );

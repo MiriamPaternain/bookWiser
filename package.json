@@ -1,5 +1,5 @@
 {
-  "name": "template-react",
+  "name": "book-wiser-back",
   "homepage": "./",
   "version": "0.1.0",
   "private": true,
@@ -21,7 +21,8 @@
   },
   "scripts": {
     "dev": "nodemon src/index.js",
-    "start": "react-scripts start",
+    "start": "node index.js",
+    //"start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"

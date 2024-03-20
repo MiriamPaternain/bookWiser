@@ -44,6 +44,23 @@ server.get('/api/books', async (req, res) => {
   }
 });
 
+server.get('/api/search', async (req, res) => {
+  try {
+    const query = req.query.query;
+    const normalizedQuery = query
+      .toLowerCase()
+      .normalize('NFD')
+      .replace(/[\u0300-\u036f]/g, '');
+    const books = await Book.find({
+      title: { $regex: normalizedQuery, $options: 'i' },
+    });
+    res.status(200).json({ results: books });
+  } catch (error) {
+    console.error('Error al buscar:', error);
+    res.status(500).json({ error: 'Ocurrió un error al hacer la búsqueda' });
+  }
+});
+
 //habilitar puerto para escuchar servidor
 const PORT = 4000;
 

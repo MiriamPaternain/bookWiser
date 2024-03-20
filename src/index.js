@@ -45,19 +45,29 @@ server.get('/api/books', async (req, res) => {
 });
 
 server.get('/api/search', async (req, res) => {
+  const { query, by } = req.query;
+
   try {
-    const query = req.query.query;
-    const normalizedQuery = query
-      .toLowerCase()
-      .normalize('NFD')
-      .replace(/[\u0300-\u036f]/g, '');
-    const books = await Book.find({
-      title: { $regex: normalizedQuery, $options: 'i' },
-    });
+    let books;
+
+    if (by === 'title') {
+      books = await Book.find({ title: { $regex: new RegExp(query, 'i') } });
+    } else if (by === 'author') {
+      books = await Book.find({ author: { $regex: new RegExp(query, 'i') } });
+    } else {
+      // Si no se especifica "by" o es otro valor, buscar tanto por título como por autor
+      books = await Book.find({
+        $or: [
+          { title: { $regex: new RegExp(query, 'i') } },
+          { author: { $regex: new RegExp(query, 'i') } },
+        ],
+      });
+    }
+
     res.status(200).json({ results: books });
   } catch (error) {
-    console.error('Error al buscar:', error);
-    res.status(500).json({ error: 'Ocurrió un error al hacer la búsqueda' });
+    console.error('Error al realizar la búsqueda:', error);
+    res.status(500).json({ error: 'Ocurrió un error al realizar la búsqueda' });
   }
 });
 

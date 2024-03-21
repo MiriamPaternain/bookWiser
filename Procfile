@@ -1,1 +1,1 @@
-src: npm run dev
+src: node src/index.js

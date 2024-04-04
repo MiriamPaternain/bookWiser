@@ -79,3 +79,5 @@ dbConnect();
 server.listen(PORT, () => {
   console.log('se ha conectado al puerto' + PORT);
 });
+
+server.use(express.static('./public'));

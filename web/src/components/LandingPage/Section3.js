@@ -9,7 +9,9 @@ function Section3({ searchItem }) {
   useEffect(() => {
     async function fetchBooks() {
       try {
-        const response = await axios.get('http://localhost:4000/api/books');
+        const response = await axios.get(
+          'https://bookwiser.onrender.com/api/books'
+        );
         setBooks(response.data.books);
       } catch (error) {
         console.error('Error al obtener los libros', error);

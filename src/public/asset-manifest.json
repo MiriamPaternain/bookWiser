@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "./static/css/main.01800ee2.css",
+    "main.css": "./static/css/main.95c691a4.css",
     "main.js": "./static/js/main.0433faab.js",
     "static/media/old-books-arrangement-with-copy-space.jpg": "./static/media/old-books-arrangement-with-copy-space.7e388c910d12d75e7d8b.jpg",
     "static/media/addBookBackground.jpg": "./static/media/addBookBackground.64cf4258a0eb4da8931a.jpg",
     "static/media/bookWiserLogoPurple.png": "./static/media/bookWiserLogoPurple.b7ba9a79714064fc797a.png",
     "static/media/bookWiserLogoPurpleLarge.png": "./static/media/bookWiserLogoPurpleLarge.c196c65d07c59b3528ed.png",
     "index.html": "./index.html",
-    "main.01800ee2.css.map": "./static/css/main.01800ee2.css.map",
+    "main.95c691a4.css.map": "./static/css/main.95c691a4.css.map",
     "main.0433faab.js.map": "./static/js/main.0433faab.js.map"
   },
   "entrypoints": [
-    "static/css/main.01800ee2.css",
+    "static/css/main.95c691a4.css",
     "static/js/main.0433faab.js"
   ]
 }

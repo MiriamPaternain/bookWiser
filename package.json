@@ -1,6 +1,6 @@
 {
   "name": "book-wiser-back",
-  "homepage": "./",
+  "homepage": "https://bookwiser.onrender.com/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

@@ -72,12 +72,12 @@ server.get('/api/search', async (req, res) => {
 });
 
 //habilitar puerto para escuchar servidor
-const PORT = 4000;
+const port = process.env.PORT || 4000;
 
 dbConnect();
 
-server.listen(PORT, () => {
-  console.log('se ha conectado al puerto' + PORT);
+server.listen(port, () => {
+  console.log('se ha conectado al puerto' + port);
 });
 
 server.use(express.static('./src/public'));
